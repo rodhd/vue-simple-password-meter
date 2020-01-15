@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue simple password meter demo</title>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-simple-password-meter"></script>
+
+
+  
+<style>
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #app .wrap {
+    max-width: 450px;
+    margin: auto;
+  }
+  
+  #app .wrap input {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #app p {
+    margin: 16px 0;
+    color: #777;
+    line-height: 1.5;
+  }
+  
+  #app p b {
+    color: #333333;
+  }
+  
+  #app form {
+    margin: 0 25px;
+  }
+  
+  #app form label {
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 6px;
+  }
+  </style>
+</head>
+<body>
+  
+<div id="app">
+  <div class="wrap">
+    <h1>Vue Simple Password Meter</h1>
+    <p>
+      <b>Vue Simple Passwod Meter</b> is a simple password checker written in
+      vanilla js and extremly lightweight
+    </p>
+
+    <form>
+      <label for="password">Password</label>
+      <input id="password" type="password" v-model="passValue" />
+      <password-meter :password="passValue" />
+    </form>
+  </div>
+</div>
+
+  <script>
+    new Vue({
+      components: {
+        passwordMeter: passwordMeter
+      },
+      data: function() {
+        return {
+          passValue: null
+        }
+      }
+    }).$mount('#app')
+    </script>    
+</body>
+</html>
